@@ -1,0 +1,32 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+<div class="p-8">
+    <div class="card card-body bg-black">
+ <!-- contact section start -->
+       <h1 class="contact_taital">Crear nuevo blog</h1>
+       <form action="/blog/add_blog" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+            <div class="form-group my-2">
+                <input type="text" id="title" placeholder="title of blog" name="title" required>
+            </div>
+            <div class="form-group my-2">
+            <textarea name="description" cols="50" rows="10" placeholder="Description"></textarea>
+            </div>
+            <div class="form-group my-2">
+                <input type="date" placeholder="date" name="date">
+            </div>
+            <div class="form-group my-2">
+            <input type="file" name="image" accept=".png, .jpeg, .jpg, .gif">
+            </div>
+            <div class="form-group my-2">
+                <button type="submit" class="btn btn-primary btn-sm">Guardar</button>
+            </div>
+        </form>
+    </div>
+         
+ <!-- contact section end -->
+    </div>
+ 
+
+{% endblock %}
+
